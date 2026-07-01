@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zk-TallyUp จดแต้มวงไพ่</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="zk-TallyUp" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <base href="/TallyUp/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/svg+xml" href="icon.svg" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#2E7D32" />
+    <link href="TallyUp.styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app">
+        <div class="d-flex justify-content-center align-items-center" style="height:100vh;">
+            <p>กำลังโหลด...</p>
+        </div>
+    </div>
+
+    <div id="blazor-error-ui" style="display:none;">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>navigator.serviceWorker.register('service-worker.js');</script>
+    <script>
+        window.selectOnFocus = (el) => { el.select(); };
+        document.addEventListener('focusin', (e) => {
+            if (e.target.tagName === 'INPUT' && e.target.type === 'number') e.target.select();
+        });
+    </script>
+</body>
+
+</html>
